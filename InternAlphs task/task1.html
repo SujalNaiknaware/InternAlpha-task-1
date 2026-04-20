@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h2>Sujal</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div>
+        <h1>SUJAL YASHWANT NAIKNAWARE</h1>
+        <h2><span id="typing"></span></h2>
+        <a href="resume.pdf" class="btn" download>Download Resume</a>
+    </div>
+
+    <div class="avatar">
+        👨‍💻
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="card" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+       
+            I am a passionate and motivated third-year Information Technology engineering student at 
+            I2IT College, Pune. I have a strong interest in Web Development,mern stack, 
+            and building real-world software solutions.
+    </p>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="card" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills">
+        <span><i class="fab fa-html5"></i> HTML</span>
+        <span><i class="fab fa-css3-alt"></i> CSS</span>
+        <span><i class="fab fa-js"></i> JavaScript</span>
+        <span><i class="fab fa-react"></i> React</span>
+        <span><i class="fab fa-node"></i> Node.js</span>
+        <span>MongoDB</span>
+        <span>Java</span>
+        <span>C++</span>
+        <span>Python</span>
+        <span>DSA</span>
+        <span>Cloud</span>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="card" data-aos="fade-up">
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3>🌐 Portfolio Website</h3>
+            <p>Responsive personal portfolio using HTML & CSS.</p>
+            <a href="#" class="btn small">Live</a>
+            <a href="#" class="btn small">GitHub</a>
+        </div>
+
+        <div class="project">
+            <h3>📊 Sorting Visualizer</h3>
+            <p>Visualizes sorting algorithms step-by-step.</p>
+            <a href="#" class="btn small">Live</a>
+            <a href="#" class="btn small">GitHub</a>
+        </div>
+
+        <div class="project">
+            <h3>📝 To-Do App</h3>
+            <p>Task management app using JavaScript.</p>
+            <a href="#" class="btn small">Live</a>
+            <a href="#" class="btn small">GitHub</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="card" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Email: yourmail@gmail.com</p>
+    <p>LinkedIn: your link</p>
+    <p>GitHub: your link</p>
+</section>
+
+<footer>
+    <p>© 2026 Sujal Naiknaware</p>
+</footer>
+
+<!-- JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+
+// Typing Effect
+const text = ["Web Developer", "mern stack developer", "Tech Enthusiast"];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+    current = text[i];
+    document.getElementById("typing").textContent = current.substring(0, j);
+
+    if (!isDeleting && j < current.length) {
+        j++;
+        setTimeout(type, 100);
+    } else if (isDeleting && j > 0) {
+        j--;
+        setTimeout(type, 50);
+    } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) i = (i + 1) % text.length;
+        setTimeout(type, 1000);
+    }
+}
+type();
+</script>
+
+</body>
+</html>
